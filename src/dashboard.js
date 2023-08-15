@@ -10,6 +10,10 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
     alert("Please Enter a Number");
     return;
   }
+  if (depositAmount <= 0) {
+    alert("Invalid Amount");
+    return;
+  }
   let depositBalance = parseInt(
     document.getElementById("deposit-balance").innerText
   );
