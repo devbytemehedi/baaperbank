@@ -2,15 +2,10 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
   const depositField = document.getElementById("deposit-field");
   const depositAmount = parseInt(depositField.value);
   depositField.value = "";
-  if (depositAmount === "") {
+  if (isNaN(depositAmount) || depositAmount === "") {
     alert("Please Enter a Number");
     return;
-  }
-  if (isNaN(depositAmount)) {
-    alert("Please Enter a Number");
-    return;
-  }
-  if (depositAmount <= 0) {
+  } else if (depositAmount <= 0) {
     alert("Invalid Amount");
     return;
   }
@@ -29,11 +24,7 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const withdrawField = document.getElementById("withdraw-field");
   const withdrawAmount = parseInt(withdrawField.value);
   withdrawField.value = "";
-  if (withdrawAmount === "") {
-    alert("Please Enter a Number");
-    return;
-  }
-  if (isNaN(withdrawAmount)) {
+  if (isNaN(withdrawAmount) || withdrawAmount === "") {
     alert("Please Enter a Number");
     return;
   }
